@@ -1,0 +1,48 @@
+<header>
+    <h2> ▲I 𝗦INGULARITY </h2>
+    <h2 class="petitionText">PETITION</h2>
+</header>
+<section>
+    <div>
+        <img class="starchildImg" src="/images/starchild.jpg" alt="starchildImg" />
+    </div>
+    <div>
+        <form method="POST">
+            <div>
+                <p class="register">Now please tell us a bit more about yourself</p>
+            </div>
+            <div>
+                {{#if error}}
+                    <span id="error">Uh oh, something went wrong. Please try again!</span>
+                {{/if}}
+            </div>
+            <div>
+                {{#if falseUrl}}
+                    <span id="error">Please enter a valid url: 'http://..' or 'https://..'</span>
+                {{/if}}
+                {{#if noValues}}
+                    <span id="error">{{noValues}}</span>
+                {{/if}}
+                {{#if noCity}}
+                    <span id="error">{{noCity}}</span>
+                {{/if}}
+            </div>
+            <div id="inputNamesContainer">
+                <input
+                    type="number"
+                    name="age"
+                    placeholder="Age"
+                    autocomplete="off"
+                    min="18"
+                    max="99"
+                />
+                <input type="text" name="city" placeholder="City" autocomplete="off" />
+                <input type="url" name="url" placeholder="Homepage Url" autocomplete="off" />
+                <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+            </div>
+            <div>
+                <button class="button">CONTINUE</button>
+            </div>
+        </form>
+    </div>
+</section>

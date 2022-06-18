@@ -1,0 +1,23 @@
+<header class="signersHeader">
+    <h2> ▲I 𝗦INGULARITY </h2>
+    <h2 class="petitionText">PETITION</h2>
+</header>
+<section class="sectionSigners">
+    <div>
+        <img class="machineMen" src="/images/machineMen.jpg" alt="machineMen" />
+    </div>
+    <div>
+        <p class="enterSignatureText">All undersigned:</p>
+    </div>
+    <div id="signers">
+        {{#rows}}
+            <p><a href="{{url}}" target="_blank">{{first}} {{last}}</a>
+                {{age}}
+                <a href="/signers/{{city}}">{{city}}</a></p>
+        {{/rows}}
+    </div>
+    <div>
+        <p class="enterSignatureText arrowsBack"><a href="/thanks"><strong id="arrowBack">❮</strong>
+                <strong id="arrowBack2">❮</strong></a></p>
+    </div>
+</section>

@@ -1,0 +1,41 @@
+<header>
+    <h2> ▲I   𝗦INGULARITY </h2>
+    <h2 class="petitionText">PETITION</h2>
+</header>
+<section>
+    <div>
+        <p class="enterSignatureText">Thank you {{first}} for signing our petition helping us spread the word and make everyone more aware of the future that may await us!</p>
+    </div>
+    <div id="signers">
+        <a href="/signers"><strong
+                    id="arrowBack2"
+                >❯</strong>
+                <strong id="arrowBack">❯</strong> &ensp;&ensp;SEE ALL {{countSignedHB}} signers &ensp;&ensp;<strong
+                    id="arrowBack"
+                >❮</strong>
+                <strong id="arrowBack2">❮</strong></a>
+    </div>
+    <div>
+        <img class="HALcanvasImg" src="/images/HALcanvas.jpeg" alt="HALcanvasImg">
+    </div>
+    <div>
+        <img id="renderSignature" src={{signatureHB}} alt="SignatureImg">
+    </div>
+    <div>
+        <form method='POST'>
+            
+            <div class="thanks">
+                <div id="editDelete">
+                    <button id="editButton" name="editProfile"> EDIT Profile </submit>
+                    <button id="deleteButton" name="deleteSignature"> DELETE Signature </submit>
+                </div>
+                <div id="logOut">
+                <br>
+                    <button href="/login" id="logoutButton" name="LogOut"> LOG OUT </submit>
+                </div>
+                
+                <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,44 @@
+<a href="/home">
+<header>
+        <h2> ▲I 𝗦INGULARITY </h2>
+        <h2 class="petitionText">PETITION</h2>
+</header>
+</a>
+<section class="loginSection">
+    <div style="text-align:center;">
+        {{#if error}}
+            <span id="error">Uh oh, something went wrong. Please try again!</span>
+        {{/if}}
+        {{#if emptyValues}}
+            <span id="error">Please fill in all the required fields.</span>
+        {{/if}}
+        {{#if emptyValue}}
+                <span id="error">Ops, it looks like the "{{emptyValue}}" field has been left empty!</br>Please fill in all the required fields.</span>
+        {{/if}}
+        {{#if accountAlreadyRegistrated}}
+            <span id="error">Mmh, it looks like an account is already registered with this email.</span>
+        {{/if}}
+    </div>
+    <div>
+        <img class="HALoginImg" src="/images/HALogin.jpg" alt="HALoginImg" />
+    </div>
+    <div>
+        <p class="enterSignatureText">Please log in here:</p>
+    </div>
+    <div>
+        <form method="POST">
+            <div id="inputNamesContainer" class="inputNamesContainerLogin">
+                <input type="email" name="email" placeholder="Email Address" autocomplete="off" />
+                <input id="inputLoginPsw" type="password" name="password" placeholder="Password" autocomplete="off" />
+                <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+            </div>
+            <div>
+                <button id="inputLogin"> LOG IN </button>
+            </div>
+            <div title="Back">
+                <p class="enterSignatureText arrowsBack arrowsBackLogin"><a href="/register"><strong id="arrowBack">❮</strong>
+                <strong id="arrowBack2">❮</strong></a></p>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,36 @@
+<header>
+    <h2> ▲I   𝗦INGULARITY </h2>
+    <h2 class="petitionText">PETITION</h2>
+</header>
+<section>
+    <div>
+        <img class="HALcanvasGIF" src="/images/HALcanvasGIF.gif" alt="HALcanvasGIF">
+    </div>
+    <div>
+        <form method='POST'>
+            <div>
+                <p class="enterSignatureText">Please enter here your signature:</p>
+            </div>
+            <div>
+                {{#if error}}
+                <span id="error">Uh oh, something went wrong. Please try again!</span>
+                {{/if}}
+            </div>
+            <div>
+                <p class="sign">Please sign here:</p>
+                <canvas width="500" height="150"></canvas>
+                <input id="signature" type="hidden" name="signature" value="">
+                <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            </div>
+            <div>
+                <button class="petition" id="submitSignature"> SUBMIT </submit>
+            </div>
+        </form>
+            <div style="text-align:center;">
+                <button class="petition" id="clearCanvas"> CLEAR </button>
+            </div>
+    </div>
+</section>
+
+{{!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>  --}}
+<script src="/drawSignatureCanvas.js"></script>   

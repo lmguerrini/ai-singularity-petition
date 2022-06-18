@@ -1,0 +1,941 @@
+* {
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(9, 9, 9);
+    overflow-x: hidden;
+}
+
+header {
+    -background-color: rgba(28, 28, 28, 0.796);
+    background-color: rgba(31, 141, 3, 0.111);
+    -background-color: rgba(141, 3, 3, 0.193);
+}
+
+header > h2 {
+    letter-spacing: 13px;
+    padding: 10px 0 0 0;
+    -padding: 30px 150px 30px 150px;
+    -padding: 5% 30% 0 30%;
+    -font-family: Dejavu Sans, monospace;
+    -font-family: Lucida, sans-serif;
+    font-family: Copperplate;
+    text-align: center;
+    color: white;
+}
+
+header > h2.petitionText {
+    font-size: 0.99em;
+    padding-bottom: 10px;
+}
+
+.sectionFlexContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    padding-top: 2vh;
+    zoom: 1.1;
+}
+
+section > div > img {
+    padding-top: 20px;
+    -border: 1px solid lime;
+    width: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+}
+
+button:focus {
+    outline: lime;
+}
+
+footer {
+    margin: 20px 0 0 10px;
+    align-self: baseline;
+    color: white;
+    font-family: Copperplate;
+    font-size: small;
+}
+.allButFooter {
+    min-height: calc(100vh - 40px);
+}
+
+/* **************************************************************
+----                  home.handlebars                  ----
+****************************************************************/
+
+.overlay {
+    position: absolute;
+    /* position: fixed; */
+    background-color: rgb(0, 0, 0);
+    /* background-color: rgb(146, 146, 146); */
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    -height: 6615px;
+    top: 0;
+    -right: 0;
+    -visibility: hidden;
+}
+.overlay a {
+    color: white;
+}
+
+.show-overlay {
+    visibility: hidden;
+}
+
+section.register > div > form {
+    -visibility: hidden;
+}
+
+footer {
+    -visibility: hidden;
+}
+
+.displayNone {
+    display: none;
+}
+
+.backroundContainer1 {
+    /* transform: translateY(-50px); */
+    width: 100vw;
+    /* margin: 0 2.5vw; */
+    min-width: 1000px;
+    height: 100vh;
+    min-height: 800px;
+    background-image: url("/images/TheTecnhlogicalSingularity.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* border: 1px solid pink; */
+}
+.arrowsContainer {
+    z-index: 1;
+    width: 95vw;
+    min-width: 1000px;
+    margin-right: 5vw;
+    height: 97vh;
+    background: rgba(21, 21, 21, 0.2);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    animation: 4s ease-in fadeIn;
+}
+
+.backroundContainer2 {
+    width: 100vw;
+    min-width: 1000px;
+    height: 100vh;
+    min-height: 800px;
+    background-image: url("/images/TheTecnhlogicalSingularityInv.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translateY(-1vh);
+}
+.arrowsContainer2 {
+    z-index: 1;
+    width: 100vw;
+    min-width: 1000px;
+    margin-right: 5vw;
+    height: 100vh;
+    background: rgba(21, 21, 21, 0.3);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    /* animation: 3s ease-in 2s fadeIn; */
+}
+.arrowsContainer3 {
+    z-index: 1;
+    width: 95vw;
+    min-width: 1000px;
+    margin-right: 5vw;
+    height: 100vh;
+    /* animation: 3s ease-in 2s fadeIn; */
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.arrowsContainer span,
+.arrowsContainer2 span,
+.arrowsContainer3 span {
+    font-size: 1.3em;
+    opacity: 0.6;
+    letter-spacing: 5px;
+}
+.blackContainer {
+    /* background: black; */
+    background-color: rgb(9, 9, 9);
+}
+#text1 {
+    width: 100vw;
+    min-width: 1000px;
+    height: 100vh;
+    min-height: 800px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url("/images/monkeyMonolith.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#text2 {
+    width: 100vw;
+    min-width: 1000px;
+    height: 100vh;
+    min-height: 800px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url("/images/monkeyBone.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#text3 {
+    min-width: 1000px;
+    height: 100vh;
+    min-height: 800px;
+    background-image: url("/images/boneSpaceship.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#text4 {
+    width: 100vw;
+    min-width: 1000px;
+    height: 100vh;
+    min-height: 800px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url("/images/spaceMonolith.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#text5 {
+    width: 100vw;
+    min-width: 1000px;
+    height: 100vh;
+    min-height: 800px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url("/images/machineMen.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#text6 {
+    width: 100vw;
+    min-width: 1000px;
+    height: 100vh;
+    min-height: 800px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url("/images/lastMonolith.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#extraImg1 {
+    width: 100vw;
+    margin-top: 10vh;
+    min-width: 1000px;
+    height: 100vh;
+    min-height: 800px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+        url("/images/PetitionInfo.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#extraImg2 {
+    width: 100vw;
+    margin-top: 10vh;
+    min-width: 1000px;
+    height: 100vh;
+    min-height: 800px;
+    background-image: url("/images/6EpochEvolution.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.lastContainer {
+    width: 100vw;
+    margin-top: 10vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+        url("/images/newEra.jpg"), url("/images/differentPlanes.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100vw, 100vw, 35vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#arrowLx {
+    transition: 1.5s;
+    position: absolute;
+    z-index: 2;
+    width: 500px;
+    transform: translate(12.5vw, 72.5vh);
+}
+#arrow2Lx {
+    font-size: 1.1em;
+    transition: 1.5s;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.7;
+    width: 500px;
+    transform: translate(35vw, 42.5vh);
+}
+#arrowLx:hover,
+#arrow2Lx:hover {
+    transition: 1.5s;
+    opacity: 1;
+    cursor: pointer;
+}
+#arrowDx,
+#arrow2Dx {
+    transition: 1.5s;
+    position: absolute;
+    width: 700px;
+    transform: translate(27.5vw, 75vh);
+}
+#arrow2Dx {
+    opacity: 0.7;
+
+    font-size: 1.1em;
+    transition: 1.5s;
+    position: absolute;
+    width: 700px;
+    transform: translate(42.5vw, 45vh);
+}
+#arrowDx:hover,
+#arrow2Dx:hover {
+    transition: 0.5s;
+    opacity: 1;
+    cursor: pointer;
+}
+#lastArrowDown {
+    font-size: 1.1em;
+    transform: translate(0, 87vh);
+}
+#lastArrowDown:hover,
+#lastArrowUp:hover {
+    opacity: 1;
+    transition: 0.5s;
+}
+#lastArrowUp {
+    font-size: 1.1em;
+    transform: translate(0, 85vh);
+}
+
+.x-sdContainer {
+    transform: translateY(-70vh);
+    opacity: 0.5;
+    font-size: 1.2em;
+}
+
+#XsignUP {
+    color: white;
+    -right: 0;
+    -position: relative;
+    z-index: 1;
+    -text-align: right;
+    -padding-right: 2vw;
+    font-size: 2em;
+    width: 350px;
+    -padding-bottom: 10px;
+    padding-bottom: 5%;
+    padding-top: 10%;
+    text-align: center;
+}
+
+#XsignUP:hover {
+    transition: 1s;
+    color: lime;
+}
+
+a {
+    text-decoration: none;
+    -font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode",
+        Geneva, Verdana, sans-serif;
+    color: white;
+}
+#href {
+    color: white;
+}
+
+#arrowDown {
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    padding: 0;
+    margin: 0 45vw;
+    bottom: 3vh;
+    opacity: 0.15;
+    z-index: 2;
+}
+#arrowDown:hover {
+    font-size: 4em;
+    bottom: 1vh;
+    transition: 0.5s;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+#scrollDown {
+    font-family: Copperplate;
+    -padding: 0 10% 0 10%;
+    color: whitesmoke;
+    width: 700px;
+    font-size: 1.3em;
+    text-align: center;
+    transform: translateY(20vh);
+}
+
+.aiSingularityText {
+    color: rgba(255, 255, 255, 0.9);
+    -width: 100%;
+    width: 70%;
+    -width: 500px;
+    font-size: x-large;
+    transform: translateY(40vh);
+    -margin: 5% 10% 5% 10%;
+    text-align: center;
+}
+
+.aiSingularityText > a {
+    color: gray;
+    text-decoration: underline;
+}
+
+.aiSingularityText > a:hover {
+    color: lime;
+    text-decoration: none;
+}
+
+.petitionBannerImg {
+    width: 100vw;
+    transform: translateY(-2vh);
+}
+.petitionBannerImgInv {
+    transform: rotate(180deg) scaleX(-1);
+    opacity: 0.13;
+}
+
+.petitionBannerImg {
+    width: 80vw;
+    padding: 0 10vw;
+    margin: 10vh 0;
+    text-align: center;
+    object-fit: contain;
+}
+
+.petitionBannerImg3 {
+    height: 100vh;
+    object-fit: contain;
+}
+
+.lastContainer {
+    text-align: center;
+}
+
+.petitionBannerImg4 {
+    padding-top: 10vh;
+    width: 700px;
+}
+
+.lastArrow {
+    zoom: 0.9;
+    transition: 1.5s;
+    position: absolute;
+    width: 500px;
+    transform: translateX(38vw);
+}
+.lastArrow:hover {
+    transition: 0.5s;
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* **************************************************************
+----                  registration.handlebars                  ----
+****************************************************************/
+
+.register > div > img {
+    padding-top: 20px;
+    -margin-bottom: 0;
+}
+
+.sectionFlexContainer > div > img,
+p {
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    -padding-bottom: 50px;
+    -padding-top: 15px;
+}
+
+form {
+    margin: 0 150px 0 150px;
+    -border: 2px solid red;
+    -background-color: rgba(37, 37, 37, 0.534);
+    -background-color: rgba(141, 3, 3, 0.131);
+    -background-color: rgba(31, 141, 3, 0.111);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+p.register {
+    color: white;
+    width: 300px;
+    text-align: center;
+    font-family: Copperplate;
+}
+
+#error {
+    color: red;
+    font-size: 0.8em;
+}
+
+#inputNamesContainer {
+    height: 200px;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#inputNamesContainer > input {
+    border-radius: 5px;
+    background-color: black;
+    -background-color: white;
+    color: white;
+    -color: black;
+    padding: 3px 10px;
+}
+
+#inputNamesContainer > input:hover {
+    text-decoration: none;
+    border: 2px solid white;
+}
+
+#inputNamesContainer > input:focus {
+    text-decoration: none;
+    border: 2px solid lime;
+}
+
+#ifMemberLogin {
+    font-size: 0.7em;
+}
+
+.button {
+    position: relative;
+    top: 10px;
+    border-radius: 55px;
+    background-color: black;
+    color: white;
+    width: 100px;
+}
+
+.button:hover {
+    transition: 0.5s;
+    color: lime;
+    cursor: pointer;
+}
+
+span {
+    padding-top: 20px;
+    color: whitesmoke;
+    font-size: 0.7em;
+    font-family: Dejavu Sans, monospace;
+}
+
+span > a {
+    color: lime;
+}
+
+/* **************************************************************
+----                  profile.handlebars                  ----
+****************************************************************/
+
+.starchildImg {
+    width: 500px;
+}
+
+/* **************************************************************
+----                  petition.handlebars                  ----
+****************************************************************/
+.HALcanvasGIF {
+    width: 400px;
+}
+
+header > img {
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+}
+
+header > div > form {
+    display: flex;
+    flex-direction: column;
+}
+
+.enterSignatureText {
+    font-size: 1.1em;
+    padding-top: 30px;
+    color: white;
+    width: 450px;
+    text-align: center;
+    -font-family: Dejavu Sans, monospace;
+    font-family: Copperplate;
+}
+
+#signatureFailed {
+    color: red;
+    font-size: 1em;
+    -font-family: Dejavu Sans, monospace;
+}
+
+section > div > form > div {
+    display: flex;
+    -align-items: center;
+    -background-color: lime;
+    justify-content: center;
+    padding-bottom: 20px;
+    -justify-content: space-evenly;
+    -align-content: space-between;
+    -display: flex;
+    -align-self: center;
+}
+
+input {
+    width: 150px;
+    background-color: white;
+    -font-family: Dejavu Sans, monospace;
+}
+
+.sign {
+    color: red;
+}
+
+canvas {
+    border-radius: 5px;
+    position: absolute;
+    border: 1px solid white;
+    background-color: black;
+    cursor: crosshair;
+    -text-align: center;
+    -align-self: center;
+    justify-content: center;
+}
+
+canvas:hover {
+    transition: 0.5s;
+    border: 1px solid lime;
+}
+
+button.petition {
+    position: relative;
+    top: 120px;
+    font-size: 0.9em;
+    width: 80px;
+    padding: 0.2% 0.5% 0.2% 0.5%;
+    font-family: Dejavu Sans, monospace;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+
+#submitSignature {
+    transform: translate(65px, 10px);
+}
+#clearCanvas {
+    transform: translate(-65px, -35px);
+}
+
+/* **************************************************************
+----                  thanks.handlebars                  ----
+****************************************************************/
+
+#renderSignature {
+    width: 350px;
+    background-color: black;
+    -height: 80px;
+    -border: 0.1px dotted lime;
+    -padding-top: 20px;
+}
+
+#signers {
+    display: flex;
+    justify-content: center;
+}
+
+#signers > a {
+    padding: 30px 0 30px 0;
+    -padding-top: 30px;
+    -font-size: 1.1em;
+    -font-family: Dejavu Sans, monospace;
+    font-family: Copperplate;
+    bottom: 50px;
+    text-decoration: none;
+    color: white;
+    -background-color: white;
+}
+
+#signers > a:hover {
+    color: white;
+    -font-size: 1.15em;
+    transition: 1s;
+    -text-decoration: underline;
+    -text-decoration-style: dotted;
+}
+#signers:hover #arrowBack {
+    transition: 0.5s;
+    animation: 1s ease-in backAnimation infinite;
+}
+#signers:hover #arrowBack2 {
+    transition: 0.5s;
+    animation: 1s ease-in backAnimation2 infinite;
+}
+
+.thanks {
+    -display: flex;
+    -align-items: center;
+    -flex-flow: column wrap;
+    -justify-content: center;
+}
+
+.thanks > div {
+    align-self: center;
+}
+
+#editDelete {
+    height: 40px;
+    display: flex;
+}
+
+#editDelete > button {
+    height: 100%;
+    -color: white;
+    padding: 0 5px 0 5px;
+}
+
+#editButton:hover {
+    transition: 0.2s;
+    color: lime;
+}
+
+#deleteButton:hover {
+    transition: 0.2s;
+    color: red;
+}
+
+#logoutButton:hover {
+    transition: 0.2s;
+    color: white;
+}
+
+.thanks > div > button {
+    position: relative;
+    top: 10px;
+    font-size: 0.8em;
+    width: 100px;
+    -height: 50px;
+    padding: 0.2% 0.5% 0.2% 0.5%;
+    font-family: Dejavu Sans, monospace;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    margin-left: 10px;
+}
+
+#logOut {
+    position: absolute;
+    display: block;
+}
+
+#logOut > button {
+    -display: box;
+    padding: 5px 0;
+    color: gray;
+    top: 50px;
+    -height: 20px;
+    -flex-shrink: 1;
+    -align-self: flex-end;
+    -position: absolute;
+    -display: block;
+}
+
+.HALcanvasImg {
+    width: 350px;
+}
+
+/* **************************************************************
+----                  signers.handlebars                  ----
+****************************************************************/
+
+.machineMen {
+    width: 600px;
+}
+
+#signers {
+    padding-top: 30px;
+    text-align: center;
+    -width: 300px;
+    flex-flow: column wrap;
+    -align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-family: Dejavu Sans, monospace;
+    -padding-bottom: 300px;
+}
+
+#signers > p {
+    width: 100%;
+    font-size: 0.9em;
+}
+
+#signers > p > a {
+    color: lime;
+}
+
+.arrowsBack {
+    margin-top: 10px;
+    width: 50px;
+    height: 25px;
+    padding: 15px 0 0 0;
+}
+.arrowsBack:hover {
+    cursor: pointer;
+}
+
+.arrowsBack:hover #arrowBack {
+    transition: 0.5s;
+    animation: 1s ease-in backAnimation infinite;
+}
+
+.arrowsBack:hover #arrowBack2 {
+    transition: 0.5s;
+    animation: 1s ease-in backAnimation2 infinite;
+}
+
+#arrowBack {
+    opacity: 1;
+}
+/* #arrowBack:hover {
+    animation: 1s ease-in backAnimation infinite;
+} */
+@keyframes backAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+#arrowBack2 {
+    opacity: 0.1;
+}
+/* #arrowBack2:hover {
+    animation: 1s ease-in backAnimation2 infinite;
+} */
+@keyframes backAnimation2 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* **************************************************************
+----                  city.handlebars                  ----
+****************************************************************/
+.maschineMask {
+    width: 600px;
+}
+
+/* **************************************************************
+----                  edit.handlebars                  ----
+****************************************************************/
+
+.HALcoreImg {
+    width: 600px;
+}
+
+#buttonBack:hover {
+    color: red;
+}
+#buttoUpdate {
+    margin-left: 20px;
+}
+
+/* **************************************************************
+----                  login.handlebars                  ----
+****************************************************************/
+
+.loginSection {
+    zoom: 1.15;
+    padding-top: 2vh;
+}
+
+.HALoginImg {
+    position: absolute;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 235px;
+}
+
+.inputNamesContainerLogin {
+    margin-top: 40px;
+}
+#inputLoginPsw {
+    transform: translateY(-30px);
+}
+#inputLogin {
+    transform: translateY(-45px);
+}
+
+button {
+    background: black;
+    color: white;
+    padding: 3px 7px;
+}
+button:hover {
+    transition: 0.5s;
+    cursor: pointer;
+    color: lime;
+}
+
+.arrowsBackLogin {
+    transition: 0.5;
+    opacity: 0.5;
+    transform: translateY(148px);
+}
+.arrowsBackLogin:hover {
+    transition: 0.5;
+    opacity: 1;
+}
